@@ -34,7 +34,11 @@ export function fetchSignup(email, password)
 	{
 		dispatch(requestSignup)
 		fetch(`${apiUrl}/signup`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({email, password}) }).then( response => response.json() ).then( data => dispatch( receiveSignup(data) ) )
-		.catch( error => alert('Invalid email/password, email may already be in use') /*alert(error)*/ )		
+		.catch( error => 
+			{
+				alert('Invalid email/password, email may already be in use') /*alert(error)*/
+				console.error(error)
+			} )		
 	}
 }
 
