@@ -1,0 +1,16 @@
+ICW Import Notes
+--------------------
+https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
+https://www.npmjs.com/package/react-file-reader
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+--Create SRSImport component that contains react-file-reader
+	-Reads in file (.srsnote)
+	-parses file with js to get headers and bodies of notefiles
+	-Pass headers as titles
+	-turn body into html (usually already is, need to test if plain text in body of SRS gets saved to html as well)
+	-pass bodies as contents
+	-use existing addsubcourseitem code to put it into the database
