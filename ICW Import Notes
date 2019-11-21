@@ -1,11 +1,13 @@
 ICW Import Notes
 --------------------
-https://dev.to/markusclaus/fetching-data-from-an-api-using-reactredux-55ao
-https://www.npmjs.com/package/react-file-reader
+https://stackoverflow.com/questions/46119987/upload-and-read-a-file-in-react <--
 https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText
 https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+--Can be imported as course item or subcourse item---
 
 --Create SRSImport component that contains react-file-reader
 	-Reads in file (.srsnote)
