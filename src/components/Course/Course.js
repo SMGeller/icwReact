@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchAddCourseItem } from '../../actions.js'
 import CKEditor from '../CKEditor/CKEditor.js'
 import QuizEditor from '../QuizEditor/QuizEditor'
+import SRSImport from '../SRSImport/SRSImport'
 
 let Course = ({
 	courseId, 
@@ -20,6 +21,7 @@ let Course = ({
 
 		{ sessionRole === 'teacher' && // only display CKEditor if user has role 'teacher'
     	<section className='courseItemEditors'>
+    		<SRSImport fetchAddCourseItemClick={ fetchAddCourseItemClick } />
     		<CKEditor fetchAddCourseItemClick={ fetchAddCourseItemClick } /> 
     		<QuizEditor fetchAddCourseItemClick={ fetchAddCourseItemClick } courseItemId='' />
     	</section>

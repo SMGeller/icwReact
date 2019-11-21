@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchEditCourseItem, fetchAddSubCourseItem, fetchCompleteCourseItem, setArchitectureLevel } from '../../actions'
 import CKEditor from '../CKEditor/CKEditor.js'
+import SRSImport from '../SRSImport/SRSImport'
 import { isCourseItemCompletedGivenCompletedCourseItems } from '../../reducers/users'
 
 class CourseItem extends React.Component {
