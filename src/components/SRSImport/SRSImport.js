@@ -5,14 +5,21 @@ const SRSImport = () => {
 
 	const handleFileRead = (e) => {
 		const content = fileReader.result
-		console.log(content)
-		// parse text into header and body
+		// console.log(content)
+		readContent(content)
 	}
 
 	const handleFileChosen = (file) => {
 		fileReader = new FileReader();
 		fileReader.onloadend = handleFileRead
 		fileReader.readAsText(file)
+	}
+
+	const readContent = (content) => {
+		var lines = content.split(/[\r\n]+/)
+		console.log(lines[0]);
+		for(var line of lines)
+			console.log("New Line: %s", line)
 	}
 
 	return <div className='SRSImport'>
