@@ -21,8 +21,8 @@ let Course = ({
 
 		{ sessionRole === 'teacher' && // only display CKEditor if user has role 'teacher'
     	<section className='courseItemEditors'>
-    		<SRSImport fetchAddCourseItemClick={ fetchAddCourseItemClick } />
-    		<CKEditor fetchAddCourseItemClick={ fetchAddCourseItemClick } /> 
+    		<CKEditor fetchAddCourseItemClick={ fetchAddCourseItemClick } />
+    		<SRSImport fetchAddCourseItemClick={ fetchAddCourseItemClick } /> 
     		<QuizEditor fetchAddCourseItemClick={ fetchAddCourseItemClick } courseItemId='' />
     	</section>
   	}

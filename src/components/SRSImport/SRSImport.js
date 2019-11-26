@@ -1,34 +1,45 @@
 import React from 'react'
 
-const SRSImport = () => {
-	let fileReader
+let SRSImport = () => {
 
-	const handleFileRead = (e) => {
-		const content = fileReader.result
-		// console.log(content)
-		readContent(content)
-	}
-
-	const handleFileChosen = (file) => {
-		fileReader = new FileReader();
-		fileReader.onloadend = handleFileRead
+	function handleFileChosen(){
+		console.log("Inside handleFileChosen")
+		var file = document.getElementById('fileInput').files[0]
+		console.log("File name: %s", file.name)
+		var fileReader = new FileReader()
+		fileReader.onload = readContent(fileReader.result)
 		fileReader.readAsText(file)
 	}
 
-	const readContent = (content) => {
-		var lines = content.split(/[\r\n]+/)
-		console.log(lines[0]);
-		for(var line of lines)
-			console.log("New Line: %s", line)
+	function readContent(content)
+	{
+		console.log("Inside readContent")
+		if(content){
+			var lines = content.split(/[\r\n\t]+/)
+			console.log("Number of lines in file: %d", lines.length)
+			for(var line of lines)
+				console.log("New Line: %s", line)
+		// if (lines.length < 5)
+		}
+		else
+			console.log("content is NULL")
 	}
 
 	return <div className='SRSImport'>
-		<label for='fileInput'>Import From SRS</label>
-		<input type='file'
-			id='fileInput'
-			accept='.srsnote'
-			onChange={e => handleFileChosen(e.target.files[0])}
-		/>
+		<hr />
+		<h3>Import From SRS</h3>
+		<form method='POST' enctype="multipart/form-data" onSubmit={e => { 
+			console.log("Inside onSubmit")
+			handleFileChosen()
+		}}>
+			<input id='fileInput'
+				name='fileInput'
+				type='file'
+				accept='.srsnote'
+			/>
+			<input type='submit'/>
+		</form>
+		<hr />
 	</div>
 }
 
