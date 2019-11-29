@@ -24,12 +24,12 @@ const SRSImport = () => {
 
 	return <div className='SRSImport'>
 		<hr />
-			<h3>Import From SRS</h3>
-			<input type='file'
-				id='fileInput'
-				accept='.srsnote'
-				onChange={e => handleFileChosen(e.target.files[0])}
-			/>
+		<h3>Import From SRS</h3>
+		<input type='file'
+			id='fileInput'
+			accept='.srsnote'
+			onChange={e => handleFileChosen(e.target.files[0])}
+		/>
 		<hr />
 	</div>
 }
