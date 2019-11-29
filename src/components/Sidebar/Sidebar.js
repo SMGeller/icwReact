@@ -22,7 +22,7 @@ class Sidebar extends React.Component
 					<img src='/images/icw-logo-128x90.png' alt='ICW logo'/>
 				</NavLink>
 				
-				<h4>{!this.props.courseId || this.props.courseId === '' ? 'Projects' : ''}</h4>
+				<h4 style={{color:'#098448'}}>{!this.props.courseId || this.props.courseId === '' ? 'Projects' : ''}</h4>
 
 				{this.props.children}
 				

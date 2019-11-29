@@ -57,7 +57,10 @@ class CourseItem extends React.Component {
 						}
 
 						{ this.state.isAddingSubCourseItem && !this.state.isEditing && !this.props.courseItem.parentCourseItemId && // add sub course item CKEditor (do not allow users to add sub course items to sub course items)
-							<CKEditor isAddingSubCourseItem={true} fetchAddSubCourseItemClick={ this.props.fetchAddSubCourseItemClick } type={ this.props.courseItem.type } />
+							<section className="addSubCourseItem">
+								<CKEditor isAddingSubCourseItem={true} fetchAddSubCourseItemClick={ this.props.fetchAddSubCourseItemClick } type={ this.props.courseItem.type } />
+								<SRSImport isAddingSubCourseItem={true} fetchAddSubCourseItemClick={ this.props.fetchAddSubCourseItemClick } type={ this.props.courseItem.type } />
+							</section>
 						}	
 					</section>
 				}
